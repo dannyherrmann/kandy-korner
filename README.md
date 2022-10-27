@@ -1,71 +1,127 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 # kandy-korner
+
+```
+{
+  "users": [
+    {
+      "id": 1,
+      "fullName": "Danny Herrmann",
+      "email": "dannyherrmann91@gmail.com",
+      "isStaff": true
+    },
+    {
+      "id": 2,
+      "fullName": "Kim Herrmann",
+      "email": "kim@gmail.com",
+      "isStaff": false
+    }
+  ],
+  "employees": [
+    {
+      "id": 1,
+      "userId": 1,
+      "startDate": "2020-03-09T22:18:26.625Z",
+      "payRate": 25
+    }
+  ],
+  "customers": [
+    {
+      "id": 1,
+      "userId": 2,
+      "loyaltyNumber": 12345
+    }
+  ],
+  "purchases": [
+    {
+      "id": 1,
+      "customerId": 1,
+      "productId": 1,
+      "quantity": 3
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "productName": "Snickers",
+      "productTypeId": 1,
+      "locationId": 1,
+      "cost": 3
+    },
+    {
+      "id": 2,
+      "productName": "Smarties",
+      "productTypeId": 2,
+      "locationId": 3,
+      "cost": 4
+    },
+    {
+      "id": 3,
+      "productName": "Bazooka Bubble Gum",
+      "productTypeId": 3,
+      "locationId": 2,
+      "cost": 26.5
+    },
+    {
+      "userId": 1,
+      "productName": "Hershey's",
+      "productTypeId": 1,
+      "cost": 5,
+      "id": 4
+    },
+    {
+      "userId": 1,
+      "productName": "Bazooka",
+      "productTypeId": 3,
+      "cost": 10,
+      "id": 5
+    },
+    {
+      "userId": 1,
+      "productName": "Hershey's Kisses",
+      "productTypeId": 1,
+      "cost": 1,
+      "id": 6
+    }
+  ],
+  "productTypes": [
+    {
+      "id": 1,
+      "name": "Chocolate"
+    },
+    {
+      "id": 2,
+      "name": "Hard Candy"
+    },
+    {
+      "id": 3,
+      "name": "Gum"
+    }
+  ],
+  "locations": [
+    {
+      "id": 1,
+      "addressLine1": "123 Smarties Way",
+      "city": "Nashville",
+      "state": "TN",
+      "zip": 37211,
+      "squareFootage": 3000
+    },
+    {
+      "id": 2,
+      "addressLine1": "657 Snickers Drive",
+      "city": "Chicago",
+      "state": "IL",
+      "zip": 60521,
+      "squareFootage": 2500
+    },
+    {
+      "id": 3,
+      "addressLine1": "782 Kandy Korner St",
+      "city": "Dallas",
+      "state": "TX",
+      "zip": 70511,
+      "squareFootage": 4000
+    }
+  ]
+}
+```

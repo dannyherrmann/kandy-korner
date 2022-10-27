@@ -1,0 +1,11 @@
+.locations {
+    display: flex;
+}
+
+.location {
+    border: black solid 2px;
+    padding: 20px;
+    margin: 20px;
+    width: 200px;
+    border-radius: 30px;
+}
