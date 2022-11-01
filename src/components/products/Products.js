@@ -2,13 +2,23 @@ import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import "./Products.css"
 
-export const Products = () => {
+export const Products = ({searchTermState}) => {
     const [products, setProducts] = useState([])
     const [filteredProducts, setFilteredProducts] = useState([])
     const [topPricedProducts, updateTopPricedProducts] = useState(false)
     const navigate = useNavigate()
     const kandyUser = localStorage.getItem("kandy_user")
     const kandyUserObject = JSON.parse(kandyUser)
+
+    useEffect(
+        () => {
+            const searchedProducts = products.filter(product => {
+                return product.productName.toLowerCase().startsWith(searchTermState.toLowerCase())
+            })
+            setFilteredProducts(searchedProducts)
+        },
+        [searchTermState]
+    )
 
     useEffect(
         () => {

@@ -23,7 +23,7 @@ export const ProductForm = () => {
         },
         []
     )
-
+    console.log(`here is productTypes:`, productTypes)
     const navigate = useNavigate()
 
     const kandyUser = localStorage.getItem("kandy_user")
@@ -91,8 +91,11 @@ export const ProductForm = () => {
                         {
                             productTypes.map((productType) => {
                                 return (
-                                    <option className="productType" key={productType.id}
-                                        value={productType.id}>{productType.name}
+                                    <option 
+                                        className="productType" 
+                                        key={productType.id} 
+                                        value={productType.id}>
+                                    {productType.name}
                                     </option>
                                 )
                             })
