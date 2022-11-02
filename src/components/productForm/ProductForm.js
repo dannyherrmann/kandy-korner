@@ -7,7 +7,7 @@ export const ProductForm = () => {
     const [product, update] = useState({
         productName: "",
         productType: "",
-        cost: 0
+        cost: 0.00
     })
 
     const [productTypes, setProductTypes] = useState([])
@@ -23,6 +23,7 @@ export const ProductForm = () => {
         },
         []
     )
+
     console.log(`here is productTypes:`, productTypes)
     const navigate = useNavigate()
 
@@ -47,7 +48,8 @@ export const ProductForm = () => {
             body: JSON.stringify(productToSendToAPI)
         }
         const response = await fetch ("http://localhost:8088/products", options)
-        await response.json()
+        const testing = await response.json()
+        const id = testing.id
         navigate("/products")
     }
     sendData()
@@ -78,7 +80,7 @@ export const ProductForm = () => {
                 <div className="form-group">
                     <label><b>Product Type:</b></label>
                     <select 
-                        value={product.productType}
+                        defaultValue={product.productType}
                         className="form-control"
                         onChange={
                             (event) => {
@@ -119,7 +121,7 @@ export const ProductForm = () => {
                         (value) => {
                             console.log(`here is the value`,value)
                             const copy = {...product}
-                            copy.cost = parseInt(value)
+                            copy.cost = parseFloat(value)
                             update(copy)
                         }
                     }/>

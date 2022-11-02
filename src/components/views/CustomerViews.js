@@ -10,14 +10,13 @@ export const CustomerViews = () => {
 			<Route path="/" element={
 				<>
 					<h1>Kandy Korner</h1>
-					<div>Come get some candy!</div>
+					<div>Come get some candy!</div><br></br>
 
 					<Outlet />
 				</>
 			}>
                 
 				<Route path="locations" element={ <Locations /> } />
-				<Route path="products" element={ <Products />} />
                 <Route path="productSearch" element={ <ProductContainer /> } />
 			</Route>
 		</Routes>

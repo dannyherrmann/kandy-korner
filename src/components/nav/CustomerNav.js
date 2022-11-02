@@ -9,9 +9,6 @@ export const CustomerNav = () => {
             <li className="navbar__item navbar__locations">
                 <Link className="navbar__link" to="/locations">Locations</Link>
             </li>
-            <li className="navbar__item navbar__products">
-                <Link className="navbar__link" to="/products">Products</Link>
-            </li>
             <li className="navbar__item navbar__productSearch">
                 <Link className="navbar__link" to="/productSearch">Find Candy</Link>
             </li>

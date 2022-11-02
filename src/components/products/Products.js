@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import "./Products.css"
+import { formatValue } from "react-currency-input-field"
 
 export const Products = ({searchTermState}) => {
     const [products, setProducts] = useState([])
@@ -13,7 +14,7 @@ export const Products = ({searchTermState}) => {
     useEffect(
         () => {
             const searchedProducts = products.filter(product => {
-                return product.productName.toLowerCase().startsWith(searchTermState.toLowerCase())
+                return product.productName.toLowerCase().includes(searchTermState.toLowerCase())
             })
             setFilteredProducts(searchedProducts)
         },
@@ -72,13 +73,14 @@ export const Products = ({searchTermState}) => {
                     </>
                 )
             }
+            
             {
                 filteredProducts.map((product) => {
                     return (
                         <ul className="product" key={product.id}>
                             <u><b>{product.productName}</b></u><br></br>
                             ${product.cost}<br></br>
-                            {product.productType.name}
+                            {product.productType.name} 
                         </ul>
                     )
                 })
