@@ -1,0 +1,11 @@
+.customer {
+    border: 1px black solid;
+    margin: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+.customerField {
+    padding: 0.5rem;
+}

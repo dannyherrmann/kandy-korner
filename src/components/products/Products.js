@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import "./Products.css"
-import { formatValue } from "react-currency-input-field"
 
 export const Products = ({searchTermState}) => {
     const [products, setProducts] = useState([])

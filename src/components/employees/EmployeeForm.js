@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import CurrencyInput from 'react-currency-input-field';
+import "./Employees.css"
 
 export const EmployeeForm = () => {
 
@@ -15,6 +16,7 @@ export const EmployeeForm = () => {
     })
 
     const [locations, setLocations] = useState([])
+    const navigate = useNavigate()
 
     useEffect(
         () => {
@@ -27,6 +29,48 @@ export const EmployeeForm = () => {
         },
         []
     )
+
+    const handleSaveButtonClick = (event) => {
+
+    event.preventDefault()
+
+    const newUser = {
+        fullName: employee.fullName,
+        email: employee.email,
+        isStaff: true
+    }
+
+    const addNewUser = async () => {
+        const userOptions = {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(newUser)
+        }
+        const userResponse = await fetch ("http://localhost:8088/users", userOptions)
+        const userResponseMessage = await userResponse.json()
+
+        const newEmployee = {
+            userId: userResponseMessage.id,
+            locationId: employee.locationId,
+            startDate: employee.startDate,
+            payRate: employee.payRate
+        }
+        
+        const employeeOptions = {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(newEmployee)
+        }
+        const emplResponse = await fetch ("http://localhost:8088/employees", employeeOptions)
+        await emplResponse.json()
+        navigate("/employees")
+    }
+    addNewUser()
+    }
 
     return (
         <form className="productForm">
@@ -53,7 +97,7 @@ export const EmployeeForm = () => {
                 <div className="form-group">
                     <label><b>Email:</b></label>
                     <input
-                        autoFocus
+                        
                         type="text"
                         className="form-control"
                         placeholder="email address"
@@ -100,7 +144,6 @@ export const EmployeeForm = () => {
                 <div className="form-group">
                     <label><b>Start Date:</b></label>
                     <input
-                        autoFocus
                         type="date"
                         className="form-control"
                         value={employee.startDate}
@@ -135,6 +178,16 @@ export const EmployeeForm = () => {
                     }/>
                 </div>
             </fieldset>
+            <button
+                onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
+                className="btn btn-primary">
+                Hire Employee
+            </button>
+            <button
+                onClick={() => navigate("/employees")}
+                className="btn btn-primary">
+                Cancel
+            </button>
         </form>
     )
  

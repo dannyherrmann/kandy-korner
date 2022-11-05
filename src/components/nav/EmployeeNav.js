@@ -13,7 +13,10 @@ export const EmployeeNav = () => {
                 <Link className="navbar__link" to="/products">Products</Link>
             </li>
             <li className="navbar__item navbar__products">
-                <Link className="navbar__link" to="/createEmployee">Add Employee</Link>
+                <Link className="navbar__link" to="/employees">Employees</Link>
+            </li>
+            <li className="navbar__item navbar__products">
+                <Link className="navbar__link" to="/customers">Customers</Link>
             </li>
             <li className="navbar__item navbar__logout">
                 <Link className="navbar__link" to="" onClick={() => {

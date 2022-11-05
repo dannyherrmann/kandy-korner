@@ -1,6 +1,5 @@
 import { Outlet, Route, Routes } from "react-router-dom"
 import { Locations } from "../locations/Locations"
-import { Products } from "../products/Products"
 import { ProductContainer } from "../products/ProductContainer"
 
 
