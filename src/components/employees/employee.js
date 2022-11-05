@@ -13,6 +13,5 @@ export const Employee = ({ emplID, fullName, email, userID, location, hireDate, 
               <div>Location: {location}</div>
               <div>Hire Date: {hireDateFormatted}</div>
               <div>Hourly Rate: ${hourlyRate}/hr</div>
-              <div></div>
             </section>
 }
